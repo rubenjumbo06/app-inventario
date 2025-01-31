@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+/*BOTONES */
+.btn {
+  @apply w-[150px] py-2 rounded font-semibold transition duration-200;
+}
+
+.btn-primary {
+  @apply bg-[#54AB74] text-white hover:bg-[#1E412B];
+}
+
+.btn-secondary {
+  @apply bg-[#D9D2B0] text-gray-900 hover:bg-[#AABF70];
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700;
+}
+
+/*INPUTS */
+.input {
+  @apply w-full px-3 py-2 rounded bg-[#D9D9D9] text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#54AB74];
+}
+
+.input-label {
+  @apply block text-sm font-medium text-white;
+}
