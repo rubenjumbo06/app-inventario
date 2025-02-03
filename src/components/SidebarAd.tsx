@@ -21,7 +21,7 @@ const SidebarAd: React.FC = () => {
 
                     <ul className="space-y-2 font-medium">
                         <li>
-                            <a href="#" className="block p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <a href="../pages/index.astro" className="block p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                                 Inicio
                             </a>
                         </li>
@@ -39,6 +39,13 @@ const SidebarAd: React.FC = () => {
                                     <li><a href="#" className="block p-2 hover:bg-gray-200">Herramientas</a></li>
                                     <li><a href="#" className="block p-2 hover:bg-gray-200">Activos</a></li>
                                     <li><a href="#" className="block p-2 hover:bg-gray-200">Consumibles</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Empresa</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Estados</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Técnico</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Usuarios</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Utilidad</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Registro de Salidas</a></li>
+
                                 </ul>
                             )}
                         </li>
@@ -56,6 +63,58 @@ const SidebarAd: React.FC = () => {
                                     <li><a href="#" className="block p-2 hover:bg-gray-200">Herramientas</a></li>
                                     <li><a href="#" className="block p-2 hover:bg-gray-200">Activos</a></li>
                                     <li><a href="#" className="block p-2 hover:bg-gray-200">Consumibles</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Empresa</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Estados</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Técnico</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Usuarios</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Utilidad</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Registro de Salidas</a></li>
+                                </ul>
+                            )}
+                        </li>
+
+                        {/* Actualizar Producto */}
+                        <li>
+                            <button 
+                                onClick={() => toggleSubMenu("actualizarProducto")}
+                                className="w-full flex justify-between p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                            >
+                                Actualizar Producto ▾
+                            </button>
+                            {openSubmenus["actualizarProducto"] && (
+                                <ul className="pl-5 space-y-1">
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Herramientas</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Activos</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Consumibles</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Empresa</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Estados</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Técnico</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Usuarios</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Utilidad</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Registro de Salidas</a></li>
+                                </ul>
+                            )}
+                        </li>
+
+                        {/* Eliminar Producto */}
+                        <li>
+                            <button 
+                                onClick={() => toggleSubMenu("eliminarProducto")}
+                                className="w-full flex justify-between p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                            >
+                                Eliminar Producto ▾
+                            </button>
+                            {openSubmenus["eliminarProducto"] && (
+                                <ul className="pl-5 space-y-1">
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Herramientas</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Activos</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Consumibles</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Empresa</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Estados</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Técnico</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Usuarios</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Utilidad</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Registro de Salidas</a></li>
                                 </ul>
                             )}
                         </li>
@@ -72,6 +131,8 @@ const SidebarAd: React.FC = () => {
                                 <ul className="pl-5 space-y-1">
                                     <li><a href="#" className="block p-2 hover:bg-gray-200">Reporte Herramientas</a></li>
                                     <li><a href="#" className="block p-2 hover:bg-gray-200">Reporte Activos</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Reporte Consumibles</a></li>
+                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Reporte Registros de Salida</a></li>
                                 </ul>
                             )}
                         </li>

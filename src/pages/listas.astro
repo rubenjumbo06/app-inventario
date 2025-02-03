@@ -1,8 +1,9 @@
 ---
-import Layout from "../layouts/ad_layout.astro";
+import Layout from "../layouts/p_layout.astro";
 import SidebarAd from "../components/SidebarAd.tsx";
 ---
+
 <Layout>
-    <SidebarAd />
-<h1 class="text-3xl font-bold">Página Principal</h1>
+  <SidebarAd client:load />
+  <h1 class="text-3xl font-bold">Página Principal</h1>
 </Layout>
