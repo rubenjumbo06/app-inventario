@@ -2,39 +2,154 @@
 import Layout from '../layouts/p_layout.astro';
 ---
 
+<style>
+    /* Definir colores personalizados */
+    :root {
+        --celeste: #44A69C;
+        --verde-oscuro: #1C4029;
+        --verde-claro: #53A670;
+        --beige: #BEBF95;
+        --mostaza: yellow;
+    }
+
+    li{
+        text-decoration: underline;
+    }
+    /* Agregar sombra al texto */
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    .info-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 220px;
+        background: #C1CC6C;
+        color: white;
+        padding: 20px;
+        text-align: left;
+        font-size: 16px;
+        display: none;
+        z-index: 10;
+        border: 3px solid black; 
+    }
+
+    .button-container {
+        position: relative;
+        display: inline-block;
+    }
+</style>
+
 <Layout>
     <!-- Opciones -->
-    <div class="px-60">
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-12">
-            <div class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
-                <img src="/public/editar.svg" alt="Editar Listas" class="w-16 h-16 object-contain invert">
-                <span class="mt-5 text-lg text-white font-semibold">Editar Tablas</span>
-            </div>
-
-            <div class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
-                <img src="/public/agregar.svg" alt="Agregar Listas" class="w-16 h-16 object-contain invert">
-                <span class="mt-5 text-lg text-white font-semibold">Agregar Tablas</span>
-            </div>
-
-            <div class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
-                <img src="/public/listas.svg" alt="Lectura de Tablas" class="w-16 h-16 object-contain invert">
-                <span class="mt-5 text-lg text-white font-semibold">Lectura Tablas</span>
-            </div>
-
-            <div class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
-                <img src="/public/herramientas.svg" alt="Reporte Herramientas" class="w-16 h-16 object-contain invert">
-                <span class="mt-5 text-lg text-white font-semibold">Reporte Herramientas</span>
-            </div>
-
-            <div class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
-                <img src="/public/activos.svg" alt="Reporte Activos" class="w-16 h-16 object-contain invert">
-                <span class="mt-5 text-lg text-white font-semibold">Reporte Activos</span>
-            </div>
-
-            <div class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
-                <img src="/public/consumibles.svg" alt="Reporte Consumibles" class="w-16 h-16 object-contain invert">
-                <span class="mt-5 text-lg text-white font-semibold">Reporte Consumibles</span>
-            </div>
+  <div class="px-60">
+    <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 gap-12">
+      <div class="button-container">
+        <div
+          onclick="toggleInfo(this)"
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
+        >
+          <img
+            src="src/images/editar.svg"
+            alt="Editar Listas"
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+          />
+          <span class="mt-5 text-lg text-white font-semibold"
+            >Editar Tablas</span
+          >
         </div>
+        <div class="info-box hidden">
+          <strong><a class="font-size-2">Editar Tablas</a></strong>
+          <ul id="actualizarProducto" class="submenu pl-5 space-y-1">
+            <li>
+              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="button-container">
+        <div
+          onclick="toggleInfo(this)"
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
+        >
+          <img
+            src="src/images/agregar.svg"
+            alt="Agregar Listas"
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+          />
+          <span class="mt-5 text-lg flex text-white font-semibold"
+            >Agregar Listas</span
+          >
+        </div>
+        <div class="info-box hidden">
+          <strong><a class="font-size-2">Agregar Tablas</a></strong>
+          <ul id="agregarProducto" class="submenu pl-5 space-y-1">
+            <li>
+              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+ 
+      
+
+      <div class="button-container">
+        <div
+          onclick="toggleInfo(this)"
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
+        >
+          <img
+            src="src/images/listas.svg"
+            alt="Lectura de Tablas"
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+          />
+          <span class="mt-5 text-lg text-white font-semibold"
+            >Lectura Tablas</span
+          >
+        </div>
+        <div class="info-box hidden">
+          <strong><a class="font-size-2">Lectura Tablas</a></strong>
+          <ul id="leerProducto" class="submenu pl-5 space-y-1">
+            <li>
+              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      
+
+      
+      
     </div>
+  </div>
 </Layout>
+
+<script is:inline>
+    // FUNCIÓN PARA MOSTRAR LOS ELEMENTOS <LI> AL MOMENTO DE DAR CLICK EN EL ELEMENTO DE LA CLASE .INFO-BOX
+    function toggleInfo(element) {
+      let container = element.parentElement;
+      let infoBox = container.querySelector(".info-box");
+  
+      //Cierra todos los cuadros antes de abrir uno nuevo
+      document.querySelectorAll(".info-box").forEach((box) => {
+        if (box !== infoBox) box.style.display = "none";
+      });
+  
+      //Alternar visibilidad del cuadro de información
+      infoBox.style.display =
+        infoBox.style.display === "block" ? "none" : "block";
+    }
+  
+    //Cerrar el cuadro si se hace clic fuera
+    document.addEventListener("click", function (event) {
+      if (!event.target.closest(".button-container")) {
+        document
+          .querySelectorAll(".info-box")
+          .forEach((box) => (box.style.display = "none"));
+      }
+    });
+  </script>
