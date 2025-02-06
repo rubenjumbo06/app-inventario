@@ -63,7 +63,7 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Editar Tablas</a></strong>
           <ul id="actualizarProducto" class="submenu pl-5 space-y-1">
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+              <a class="block p-2 hover:bg-gray-200" onclick="setRoleAndRedirect('tecnico')">•Consumibles</a>
             </li>
           </ul>
         </div>
@@ -93,9 +93,6 @@ import Layout from '../layouts/p_layout.astro';
         </div>
       </div>
 
- 
-      
-
       <div class="button-container">
         <div
           onclick="toggleInfo(this)"
@@ -120,10 +117,29 @@ import Layout from '../layouts/p_layout.astro';
         </div>
       </div>
 
-      
-
-      
-      
+      <div class="button-container">
+        <div 
+          onclick="toggleInfo(this)" 
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
+        >
+          <img 
+            src="src/images/consumibles.svg"
+            alt="Reporte Consumibles" 
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+          />
+          <span class="mt-5 text-lg text-white font-semibold"
+            >Reporte Consumibles</span
+          >
+        </div>
+          <div class="info-box">
+            <strong><a class="font-size-2">Agregar Tablas</a></strong>
+            <ul id="reportConsumibles" class="submenu pl-5 space-y-1">
+                <u><li><a href="#" class="block p-2 hover:bg-gray-200">•PDF</a></li>   </u>
+                <u><li><a href="#" class="block p-2 hover:bg-gray-200">•Excel</a></li></u>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </Layout>
@@ -152,4 +168,10 @@ import Layout from '../layouts/p_layout.astro';
           .forEach((box) => (box.style.display = "none"));
       }
     });
+
+    function setRoleAndRedirect(role) {
+            sessionStorage.setItem("role", role);
+            window.location.href = "listas/consumibles";
+        }
+
   </script>

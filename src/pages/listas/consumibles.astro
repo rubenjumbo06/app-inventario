@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Tablas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .editBtn {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .deleteBtn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        #addBtn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        .nav-buttons {
+            margin-top: 20px;
+        }
+
+        .nav-buttons a button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Visualización de Tablas</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Producto A</td>
+            <td>
+                <button class="editBtn">Editar</button>
+                <button class="deleteBtn">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Producto B</td>
+            <td>
+                <button class="editBtn">Editar</button>
+                <button class="deleteBtn">Eliminar</button>
+            </td>
+        </tr>
+    </table>
+
+    <button id="addBtn">Agregar Nuevo</button>
+
+    <div class="nav-buttons">
+        <a href="inicio.html" id="btnAdmin"><button>Volver a Administrador</button></a>
+        <a href="../TECindex" id="btnTecnico"><button>Volver a Técnico</button></a>
+        <a href="USindex.html" id="btnUsuario"><button>Volver a Usuario</button></a>
+    </div>
+
+    <script is:inline>
+        // Obtener el rol guardado en sessionStorage
+        const role = sessionStorage.getItem("role") || "usuario"; // Valor por defecto: usuario
+
+        // Aplicar restricciones a botones de acción
+        if (role === "usuario") {
+            document.querySelectorAll(".editBtn").forEach(btn => btn.style.display = "none"); // Oculta Editar
+            document.querySelectorAll(".deleteBtn").forEach(btn => btn.style.display = "none"); // Oculta Eliminar
+            document.getElementById("addBtn").style.display = "none"; // Oculta Agregar Nuevo
+        } else if (role === "tecnico") {
+            document.querySelectorAll(".deleteBtn").forEach(btn => btn.style.display = "none"); // Oculta solo Eliminar
+        }
+
+        // Ocultar botones de "Volver a..."
+        document.getElementById("btnAdmin").style.display = role === "admin" ? "inline-block" : "none";
+        document.getElementById("btnTecnico").style.display = role === "tecnico" ? "inline-block" : "none";
+        document.getElementById("btnUsuario").style.display = role === "usuario" ? "inline-block" : "none";
+
+        console.log("Rol actual:", role); // Ver en consola qué rol tiene
+    </script>
+
+</body>
+</html>
