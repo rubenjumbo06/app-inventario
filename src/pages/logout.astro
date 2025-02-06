@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout>
+    <div class="bg-[#AABF70] p-6 rounded-lg shadow-lg w-full sm:w-[600px]">
+        <div class="bg-[#D9D2B0] p-6 rounded-lg text-left">
+            <img class="mx-auto h-40 w-auto" src="src/images/starnet.png" alt="Imagen de Starnet"> 
+            <h1 class="mt-4 text-center text-2xl font-bold tracking-tight text-white">CERRAR SESIÓN</h1>
+            <p class="text-center text-sm text-white mt-2">Hola Admin, ¿Estás seguro de cerrar sesión en<br>Inventario BARUC - STARNET?</p>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="login"><button id="yes" class="w-[150px] py-2 rounded bg-[#E74C3C] text-white font-semibold hover:bg-[#44A69C] transition">Sí</button></a>
+                <a href="/"><button id="no" class="w-[150px] py-2 rounded bg-[#53A670] text-white font-semibold hover:bg-[#1C4029] transition">No</button></a>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<script is:inline>
+    document.getElementById('yes').addEventListener('click', function () {
+           alert("Gracias por su visita. Cerrando sesión...");
+           // Redirige al usuario a la página de inicio de sesión o realiza la acción de logout
+           // window.location.href = "login.astro";
+       });
+</script>
