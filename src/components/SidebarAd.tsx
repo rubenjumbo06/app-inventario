@@ -1,148 +1,252 @@
 import React, { useState } from "react";
+import styles from '../styles/Sidebar.module.css';
 
 const SidebarAd: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [openSubmenus, setOpenSubmenus] = useState<{ [key: string]: boolean }>({});
 
-    // Alternar submenús
+    // Función para alternar submenús
     const toggleSubMenu = (id: string) => {
         setOpenSubmenus(prev => ({ ...prev, [id]: !prev[id] }));
     };
 
     return (
-        <div 
-            className="fixed top-0 left-0 h-screen w-2 bg-transparent hover:w-64 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 shadow-lg overflow-hidden"
+        <div
+            className={`${styles['menu-container']} ${isOpen ? styles.open : ''}`}
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
         >
             {isOpen && (
-                <div className="h-full p-4 overflow-y-auto">
-                    <h5 className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menú</h5>
+                <div className={styles['menu-content']}>
+                    {/* Título del menú */}
+                    <h5 className={styles['menu-title']}>Menú</h5>
 
-                    <ul className="space-y-2 font-medium">
+                    {/* Lista de opciones */}
+                    <ul style={{ listStyle: 'none', padding: 0 }}>
+                        {/* Inicio */}
                         <li>
-                            <a href="../pages/index.astro" className="block p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <a href="../pages/index.astro" className={styles['menu-item']}>
                                 Inicio
                             </a>
                         </li>
 
                         {/* Listas */}
                         <li>
-                            <button 
-                                onClick={() => toggleSubMenu("listas")}
-                                className="w-full flex justify-between p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                            <button
+                                onClick={() => toggleSubMenu('listas')}
+                                className={styles['menu-button']}
                             >
                                 Listas ▾
                             </button>
-                            {openSubmenus["listas"] && (
-                                <ul className="pl-5 space-y-1">
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Herramientas</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Activos</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Consumibles</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Empresa</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Estados</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Técnico</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Usuarios</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Utilidad</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Registro de Salidas</a></li>
-
+                            {openSubmenus['listas'] && (
+                                <ul className={styles['submenu']}>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Herramientas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Activos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Consumibles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Empresa
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Estados
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Técnico
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Usuarios
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Utilidad
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Registro de salidas
+                                        </a>
+                                    </li>
                                 </ul>
                             )}
                         </li>
 
                         {/* Agregar Producto */}
                         <li>
-                            <button 
-                                onClick={() => toggleSubMenu("agregarProducto")}
-                                className="w-full flex justify-between p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                            <button
+                                onClick={() => toggleSubMenu('agregarProducto')}
+                                className={styles['menu-button']}
                             >
                                 Agregar Producto ▾
                             </button>
-                            {openSubmenus["agregarProducto"] && (
-                                <ul className="pl-5 space-y-1">
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Herramientas</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Activos</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Consumibles</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Empresa</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Estados</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Técnico</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Usuarios</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Utilidad</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Registro de Salidas</a></li>
+                            {openSubmenus['agregarProducto'] && (
+                                <ul className={styles['submenu']}>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Herramientas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Activos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Consumibles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Empresa
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Estados
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Técnico
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Usuarios
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Utilidad
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Registro de salidas
+                                        </a>
+                                    </li>
                                 </ul>
                             )}
                         </li>
 
                         {/* Actualizar Producto */}
                         <li>
-                            <button 
-                                onClick={() => toggleSubMenu("actualizarProducto")}
-                                className="w-full flex justify-between p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                            <button
+                                onClick={() => toggleSubMenu('actualizarProducto')}
+                                className={styles['menu-button']}
                             >
                                 Actualizar Producto ▾
                             </button>
-                            {openSubmenus["actualizarProducto"] && (
-                                <ul className="pl-5 space-y-1">
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Herramientas</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Activos</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Consumibles</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Empresa</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Estados</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Técnico</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Usuarios</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Utilidad</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Registro de Salidas</a></li>
+                            {openSubmenus['actualizarProducto'] && (
+                                <ul className={styles['submenu']}>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Herramientas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Activos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Consumibles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Empresa
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Estados
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Técnico
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Usuarios
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Utilidad
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Registro de salidas
+                                        </a>
+                                    </li>
                                 </ul>
                             )}
                         </li>
 
-                        {/* Eliminar Producto */}
+                        {/* Reportes */}
                         <li>
-                            <button 
-                                onClick={() => toggleSubMenu("eliminarProducto")}
-                                className="w-full flex justify-between p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                            >
-                                Eliminar Producto ▾
-                            </button>
-                            {openSubmenus["eliminarProducto"] && (
-                                <ul className="pl-5 space-y-1">
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Herramientas</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Activos</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Consumibles</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Empresa</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Estados</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Técnico</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Usuarios</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Utilidad</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Registro de Salidas</a></li>
-                                </ul>
-                            )}
-                        </li>
-
-                        {/* Generar Reportes */}
-                        <li>
-                            <button 
-                                onClick={() => toggleSubMenu("generarReportes")}
-                                className="w-full flex justify-between p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                            <button
+                                onClick={() => toggleSubMenu('reportes')}
+                                className={styles['menu-button']}
                             >
                                 Generar Reportes ▾
                             </button>
-                            {openSubmenus["generarReportes"] && (
-                                <ul className="pl-5 space-y-1">
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Reporte Herramientas</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Reporte Activos</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Reporte Consumibles</a></li>
-                                    <li><a href="#" className="block p-2 hover:bg-gray-200">Reporte Registros de Salida</a></li>
+                            {openSubmenus['reportes'] && (
+                                <ul className={styles['submenu']}>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Reporte Herramientas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Reporte Activos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Reporte Consumibles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Registro de salidas
+                                        </a>
+                                    </li>
                                 </ul>
                             )}
                         </li>
-
                         {/* Perfil de Usuario */}
                         <li>
-                            <a href="#" className="block p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <a href="#" className={styles['menu-item']}>
                                 Perfil de Usuario
                             </a>
                         </li>
+
                     </ul>
                 </div>
             )}

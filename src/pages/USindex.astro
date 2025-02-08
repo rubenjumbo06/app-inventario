@@ -248,4 +248,20 @@ import Layout from '../layouts/p_layout.astro';
           .forEach((box) => (box.style.display = "none"));
       }
     });
+
+    function setRoleAndRedirect(role, pageId) {
+    sessionStorage.setItem("role", "usuario");
+      
+    const pageMap = {
+      consumibles: "/listas/consumibles",
+      herramientas: "/listas/herramientas",
+      reportes: "/listas/reportes",
+      proveedores: "/listas/proveedores",
+      clientes: "/listas/clientes"
+          // Agrega más páginas aquí según sea necesario
+      };
+
+      const targetPage = pageMap[pageId] || "TECindex"; // Redirección por defecto si el id no existe
+      window.location.href = targetPage;
+  }
   </script>

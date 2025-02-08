@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/p_layout.astro";
+import Sidebar from "../../components/Sidebar.tsx";
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Tablas</title>
+</head>
+<Layout>
+
+    <strong><h1>Visualización de Tabla Activos</h1></strong>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Producto A</td>
+            <td>
+                <button class="editBtn">Editar</button>
+                <button class="deleteBtn">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Producto B</td>
+            <td>
+                <button class="editBtn">Editar</button>
+                <button class="deleteBtn">Eliminar</button>
+            </td>
+        </tr>
+    </table>
+
+    <div class="centered-button">
+        <button id="addBtn">Agregar Nuevo</button>
+    </div>
+
+    <Sidebar client:load />
+
+</Layout>
+</html>

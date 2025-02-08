@@ -1,20 +1,20 @@
+---
+import Layout from "../../layouts/p_layout.astro";
+import Sidebar from "../../components/Sidebar.tsx";
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualización de Tablas</title>
+    <title>Visualización de Tabla Consumibles</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
 
         h1 {
-            color: #333;
+            color: white;
+            text-align: center;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 30px;
         }
 
         table {
@@ -32,7 +32,7 @@
         }
 
         th {
-            background-color: #007bff;
+            background-color: #27667B;
             color: white;
         }
 
@@ -46,11 +46,19 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            
         }
 
         .editBtn {
             background-color: #ffc107;
             color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .editBtn:hover{
+            background-color: #FBA518;
+            color: black;
+            transition: background-color 0.3s ease;
         }
 
         .deleteBtn {
@@ -62,9 +70,22 @@
             background-color: #28a745;
             color: white;
             padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        #addBtn:hover {
+            background-color: #218838; /* Un tono más oscuro de verde */
+        }
+
+        .centered-button {
+            text-align: center;
+            margin-top: 20px;
         }
 
         .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Espacio entre los botones */
             margin-top: 20px;
         }
 
@@ -73,12 +94,15 @@
             color: white;
             padding: 10px 15px;
             font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
-<body>
+<Layout>
 
-    <h1>Visualización de Tablas</h1>
+    <strong><h1>Visualización de Tabla Consumibles</h1></strong>
 
     <table>
         <tr>
@@ -104,34 +128,10 @@
         </tr>
     </table>
 
-    <button id="addBtn">Agregar Nuevo</button>
-
-    <div class="nav-buttons">
-        <a href="inicio.html" id="btnAdmin"><button>Volver a Administrador</button></a>
-        <a href="../TECindex" id="btnTecnico"><button>Volver a Técnico</button></a>
-        <a href="USindex.html" id="btnUsuario"><button>Volver a Usuario</button></a>
+    <div class="centered-button">
+        <button id="addBtn">Agregar Nuevo</button>
     </div>
 
-    <script is:inline>
-        // Obtener el rol guardado en sessionStorage
-        const role = sessionStorage.getItem("role") || "usuario"; // Valor por defecto: usuario
-
-        // Aplicar restricciones a botones de acción
-        if (role === "usuario") {
-            document.querySelectorAll(".editBtn").forEach(btn => btn.style.display = "none"); // Oculta Editar
-            document.querySelectorAll(".deleteBtn").forEach(btn => btn.style.display = "none"); // Oculta Eliminar
-            document.getElementById("addBtn").style.display = "none"; // Oculta Agregar Nuevo
-        } else if (role === "tecnico") {
-            document.querySelectorAll(".deleteBtn").forEach(btn => btn.style.display = "none"); // Oculta solo Eliminar
-        }
-
-        // Ocultar botones de "Volver a..."
-        document.getElementById("btnAdmin").style.display = role === "admin" ? "inline-block" : "none";
-        document.getElementById("btnTecnico").style.display = role === "tecnico" ? "inline-block" : "none";
-        document.getElementById("btnUsuario").style.display = role === "usuario" ? "inline-block" : "none";
-
-        console.log("Rol actual:", role); // Ver en consola qué rol tiene
-    </script>
-
-</body>
+    <Sidebar client:load />
+</Layout>
 </html>

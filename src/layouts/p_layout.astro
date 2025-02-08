@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import "../pages/logout.astro"
 ---
 
 <!DOCTYPE html>
@@ -11,10 +12,10 @@ import "../styles/global.css";
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --celeste: #44A69C;
-            --verde-oscuro: #1C4029;
-            --verde-claro: #53A670;
-            --beige: #BEBF95;
+            --celeste: #00797E;
+            --verde-oscuro: #0D4B56;
+            --verde-claro: #22694c;
+            --beige: #D8E6B5;
             --mostaza: yellow;
         }
         .text-shadow {
@@ -26,7 +27,7 @@ import "../styles/global.css";
     <!-- Encabezado -->
     <header class="w-full bg-[var(--verde-claro)] text-white p-6 flex justify-between items-center">
         <h2 class="text-3xl font-bold text-shadow">Inventario <span class="text-[var(--mostaza)]">BARUC - STARNET</span></h2>
-        <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition cursor-pointer">Log Out</button>
+        <a href="/logout"><button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-800 transition cursor-pointer">Log Out</button></a>
     </header>
 
     <!-- Contenedor Principal -->

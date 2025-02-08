@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from '../styles/Sidebar.module.css';
 
-const SidebarTec: React.FC = () => {
-
+const SidebarUser: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [openSubmenus, setOpenSubmenus] = useState<{ [key: string]: boolean }>({});
 
@@ -11,7 +10,6 @@ const SidebarTec: React.FC = () => {
         setOpenSubmenus(prev => ({ ...prev, [id]: !prev[id] }));
     };
 
-    
     return (
         <div
             className={`${styles['menu-container']} ${isOpen ? styles.open : ''}`}
@@ -44,6 +42,16 @@ const SidebarTec: React.FC = () => {
                                 <ul className={styles['submenu']}>
                                     <li>
                                         <a href="#" className={styles['submenu-item']}>
+                                            Herramientas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Activos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
                                             Consumibles
                                         </a>
                                     </li>
@@ -63,6 +71,16 @@ const SidebarTec: React.FC = () => {
                                 <ul className={styles['submenu']}>
                                     <li>
                                         <a href="#" className={styles['submenu-item']}>
+                                            Herramientas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Activos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
                                             Consumibles
                                         </a>
                                     </li>
@@ -80,6 +98,16 @@ const SidebarTec: React.FC = () => {
                             </button>
                             {openSubmenus['actualizarProducto'] && (
                                 <ul className={styles['submenu']}>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Herramientas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className={styles['submenu-item']}>
+                                            Activos
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="#" className={styles['submenu-item']}>
                                             Consumibles
@@ -102,4 +130,4 @@ const SidebarTec: React.FC = () => {
     );
 };
 
-export default SidebarTec;
+export default SidebarUser;

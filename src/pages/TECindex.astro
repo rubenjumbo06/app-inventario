@@ -170,7 +170,7 @@ import Layout from '../layouts/p_layout.astro';
     });
 
 function setRoleAndRedirect(role, pageId) {
-  sessionStorage.setItem("role", role);
+  sessionStorage.setItem("role", "tecnico");
       
     const pageMap = {
       consumibles: "/listas/consumibles",
@@ -184,6 +184,4 @@ function setRoleAndRedirect(role, pageId) {
       const targetPage = pageMap[pageId] || "TECindex"; // Redirección por defecto si el id no existe
       window.location.href = targetPage;
   }
-
-
   </script>

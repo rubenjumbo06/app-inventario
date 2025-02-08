@@ -5,10 +5,10 @@ import Layout from '../layouts/p_layout.astro';
 <style>
     /* Definir colores personalizados */
     :root {
-        --celeste: #44A69C;
-        --verde-oscuro: #1C4029;
-        --verde-claro: #53A670;
-        --beige: #BEBF95;
+        --celeste: #7AB351;
+        --verde-oscuro: #3C9B72 ;
+        --verde-claro: #22694c;
+        --beige: #D8E6B5;
         --mostaza: yellow;
     }
 
@@ -26,7 +26,7 @@ import Layout from '../layouts/p_layout.astro';
     transform: translate(-50%, -50%);
     width: 220px;
     max-height: 300px; /* Altura máxima para limitar el tamaño */
-    background: #C1CC6C;
+    background: #18919A;
     color: white;
     padding: 20px;
     text-align: left;
@@ -60,90 +60,81 @@ import Layout from '../layouts/p_layout.astro';
             alt="Editar Listas"
             class="w-16 h-16 max-w-full max-h-full object-contain invert"
           />
-          <span class="mt-5 text-lg text-white font-semibold"
-            >Editar Tablas</span
-          >
+          <span class="mt-5 text-lg text-white font-semibold">Editar Tablas</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Editar Tablas</a></strong>
           <ul id="actualizarProducto" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
-                >•Herramientas</a>
+              <a onclick="setRoleAndRedirect('admin', 'herramientas')" class="block p-2 hover:bg-gray-200">•Herramientas</a>
             </li>
             <li>
-              <a href="activos.astro" class="block p-2 hover:bg-gray-200">•Activos</a>
+              <a onclick="setRoleAndRedirect('admin', 'activos')" class="block p-2 hover:bg-gray-200">•Activos</a>
             </li>
             <li>
-              <a href="consumibles.astro" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+              <a onclick="setRoleAndRedirect('admin', 'consumibles')" class="block p-2 hover:bg-gray-200">•Consumibles</a>
             </li>
             <li>
-              <a href="empresa.astro" class="block p-2 hover:bg-gray-200">•Empresa</a>
+              <a onclick="setRoleAndRedirect('admin', 'empresa')" class="block p-2 hover:bg-gray-200">•Empresa</a>
             </li>
             <li>
-              <a href="estados.astro" class="block p-2 hover:bg-gray-200">•Estados</a>
+              <a onclick="setRoleAndRedirect('admin', 'estados')" class="block p-2 hover:bg-gray-200">•Estados</a>
             </li>
             <li>
-              <a href="tecnico.astro" class="block p-2 hover:bg-gray-200">•Técnico</a>
+              <a onclick="setRoleAndRedirect('admin', 'tecnico')" class="block p-2 hover:bg-gray-200">•Técnico</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Usuarios</a>
+              <a onclick="setRoleAndRedirect('admin', 'users')" class="block p-2 hover:bg-gray-200">•Usuario</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Utilidad</a>
+              <a onclick="setRoleAndRedirect('admin', 'utilidad')" class="block p-2 hover:bg-gray-200">•Utilidad</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200"
-                >•Registro de salidas</a>
+              <a onclick="setRoleAndRedirect('admin', 'salidas')" class="block p-2 hover:bg-gray-200">•Registro de salidas</a>
             </li>
           </ul>
         </div>
       </div>
+
       <div class="button-container">
         <div
           onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
           <img
             src="src/images/agregar.svg"
             alt="Agregar Listas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
-          <span class="mt-5 text-lg flex text-white font-semibold"
-            >Agregar Listas</span
-          >
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
+          <span class="mt-5 text-lg flex text-white font-semibold">Agregar Tablas</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Agregar Tablas</a></strong>
           <ul id="agregarProducto" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
-                >•Herramientas</a>
+              <a onclick="setRoleAndRedirect('admin', 'herramientas')" class="block p-2 hover:bg-gray-200">•Herramientas</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Activos</a>
+              <a onclick="setRoleAndRedirect('admin', 'activos')" class="block p-2 hover:bg-gray-200">•Activos</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+              <a onclick="setRoleAndRedirect('admin', 'consumibles')" class="block p-2 hover:bg-gray-200">•Consumibles</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Empresa</a>
+              <a onclick="setRoleAndRedirect('admin', 'empresa')" class="block p-2 hover:bg-gray-200">•Empresa</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Estados</a>
+              <a onclick="setRoleAndRedirect('admin', 'estados')" class="block p-2 hover:bg-gray-200">•Estados</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Técnico</a>
+              <a onclick="setRoleAndRedirect('admin', 'tecnico')" class="block p-2 hover:bg-gray-200">•Técnico</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Usuarios</a>
+              <a onclick="setRoleAndRedirect('admin', 'users')" class="block p-2 hover:bg-gray-200">•Usuario</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Utilidad</a>
+              <a onclick="setRoleAndRedirect('admin', 'utilidad')" class="block p-2 hover:bg-gray-200">•Utilidad</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200"
-                >•Registro de salidas</a>
+              <a onclick="setRoleAndRedirect('admin', 'salidas')" class="block p-2 hover:bg-gray-200">•Registro de salidas</a>
             </li>
           </ul>
         </div>
@@ -167,33 +158,31 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Eliminar Tablas</a></strong>
           <ul id="eliminarProducto" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
-                >•Herramientas</a>
+              <a onclick="setRoleAndRedirect('admin', 'herramientas')" class="block p-2 hover:bg-gray-200">•Herramientas</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Activos</a>
+              <a onclick="setRoleAndRedirect('admin', 'activos')" class="block p-2 hover:bg-gray-200">•Activos</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+              <a onclick="setRoleAndRedirect('admin', 'consumibles')" class="block p-2 hover:bg-gray-200">•Consumibles</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Empresa</a>
+              <a onclick="setRoleAndRedirect('admin', 'empresa')" class="block p-2 hover:bg-gray-200">•Empresa</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Estados</a>
+              <a onclick="setRoleAndRedirect('admin', 'estados')" class="block p-2 hover:bg-gray-200">•Estados</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Técnico</a>
+              <a onclick="setRoleAndRedirect('admin', 'tecnico')" class="block p-2 hover:bg-gray-200">•Técnico</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Usuarios</a>
+              <a onclick="setRoleAndRedirect('admin', 'users')" class="block p-2 hover:bg-gray-200">•Usuario</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Utilidad</a>
+              <a onclick="setRoleAndRedirect('admin', 'utilidad')" class="block p-2 hover:bg-gray-200">•Utilidad</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200"
-                >•Registro de salidas</a>
+              <a onclick="setRoleAndRedirect('admin', 'salidas')" class="block p-2 hover:bg-gray-200">•Registro de salidas</a>
             </li>
           </ul>
         </div>
@@ -217,10 +206,10 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Listar Usuarios</a></strong>
           <ul id="listasProductos" class="submenu pl-5 space-y-1">
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Usuarios</a>
+              <a onclick="setRoleAndRedirect('admin', 'users')" class="block p-2 hover:bg-gray-200">•Usuario</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Técnico</a>
+              <a onclick="setRoleAndRedirect('admin', 'tecnico')" class="block p-2 hover:bg-gray-200">•Técnico</a>
             </li>
           </ul>
         </div>
@@ -244,33 +233,31 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Lectura Tablas</a></strong>
           <ul id="leerProducto" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
-                >•Herramientas</a>
+              <a onclick="setRoleAndRedirect('admin', 'herramientas')" class="block p-2 hover:bg-gray-200">•Herramientas</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Activos</a>
+              <a onclick="setRoleAndRedirect('admin', 'activos')" class="block p-2 hover:bg-gray-200">•Activos</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+              <a onclick="setRoleAndRedirect('admin', 'consumibles')" class="block p-2 hover:bg-gray-200">•Consumibles</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Empresa</a>
+              <a onclick="setRoleAndRedirect('admin', 'empresa')" class="block p-2 hover:bg-gray-200">•Empresa</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Estados</a>
+              <a onclick="setRoleAndRedirect('admin', 'estados')" class="block p-2 hover:bg-gray-200">•Estados</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Técnico</a>
+              <a onclick="setRoleAndRedirect('admin', 'tecnico')" class="block p-2 hover:bg-gray-200">•Técnico</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Usuarios</a>
+              <a onclick="setRoleAndRedirect('admin', 'users')" class="block p-2 hover:bg-gray-200">•Usuarios</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Utilidad</a>
+              <a onclick="setRoleAndRedirect('admin', 'utilidad')" class="block p-2 hover:bg-gray-200">•Utilidad</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200"
-                >•Registro de salidas</a>
+              <a onclick="setRoleAndRedirect('admin', 'salidas')" class="block p-2 hover:bg-gray-200">•Registro de salidas</a>
             </li>
           </ul>
         </div>
@@ -294,11 +281,10 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Reporte de Herramientas</a></strong>
           <ul id="reportHerramientas" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
-                >•PDF</a>
+              <a onclick="setRoleAndRedirect('admin', 'pdf')" class="block p-2 hover:bg-gray-200">•PDF</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Excel</a>
+              <a onclick="setRoleAndRedirect('admin', 'excel')" class="block p-2 hover:bg-gray-200">•Excel</a>
             </li>
           </ul>
         </div>
@@ -321,8 +307,8 @@ import Layout from '../layouts/p_layout.astro';
         <div class="info-box">
           <strong><a class="font-size-2">Reporte Activos</a></strong>
           <ul id="reportActivos" class="submenu pl-5 space-y-1">
-            <li><a href="#" class="block p-2 hover:bg-gray-200">•PDF</a></li>
-            <li><a href="#" class="block p-2 hover:bg-gray-200">•Excel</a></li>
+            <li><a onclick="setRoleAndRedirect('admin', 'pdf')" class="block p-2 hover:bg-gray-200">•PDF</a></li>
+            <li><a onclick="setRoleAndRedirect('admin', 'excel')" class="block p-2 hover:bg-gray-200">•Excel</a></li>
           </ul>
         </div>
       </div>
@@ -330,26 +316,22 @@ import Layout from '../layouts/p_layout.astro';
       <div class="button-container">
         <div
           onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
           <img
             src="src/images/consumibles.svg"
             alt="Reporte Consumibles"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
           <span class="mt-5 text-lg text-white font-semibold"
-            >Reporte Consumibles</span
-          >
+            >Reporte Consumibles</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Reporte Consumibles</a></strong>
           <ul id="reportConsumibles" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
-                >•PDF</a>
+              <a onclick="setRoleAndRedirect('admin', 'pdf')" class="block p-2 hover:bg-gray-200">•PDF</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Excel</a>
+              <a onclick="setRoleAndRedirect('admin', 'excel')" class="block p-2 hover:bg-gray-200">•Excel</a>
             </li>
           </ul>
         </div>
@@ -382,4 +364,23 @@ import Layout from '../layouts/p_layout.astro';
           .forEach((box) => (box.style.display = "none"));
       }
     });
+
+    function setRoleAndRedirect(role, pageId) {
+    sessionStorage.setItem("role", "admin");
+      
+    const pageMap = {
+      consumibles: "/listas/consumibles",
+      herramientas: "/listas/herramientas",
+      activos: "/listas/activos",
+      empresa: "/listas/empresa",
+      estados: "/listas/estados",
+      salidas: "/listas/salidas",
+      tecnico: "/listas/tecnico",
+      users: "/listas/users",
+      utilidad: "/listas/utilidad"
+      };
+
+      const targetPage = pageMap[pageId] || "/"; // Redirección por defecto si el id no existe
+      window.location.href = targetPage;
+  }
   </script>
