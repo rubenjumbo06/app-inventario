@@ -3,23 +3,25 @@ import Layout from '../layouts/p_layout.astro';
 ---
 
 <style>
-    /* Definir colores personalizados */
-    :root {
-        --celeste: #7AB351;
-        --verde-oscuro: #3C9B72 ;
-        --verde-claro: #22694c;
-        --beige: #D8E6B5;
-        --mostaza: yellow;
-    }
+ /* Definir colores personalizados */
+ :root {
+    --celeste: #7ab351;
+    --verde-oscuro: #3c9b72;
+    --verde-claro: #22694c;
+    --beige: #d8e6b5;
+    --mostaza: yellow;
+  }
 
-    li{
-        text-decoration: underline;
-    }
-    /* Agregar sombra al texto */
-    .text-shadow {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    }
-    .info-box {
+  li {
+    text-decoration: underline;
+  }
+
+  /* Agregar sombra al texto */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .info-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -36,31 +38,49 @@ import Layout from '../layouts/p_layout.astro';
     border: 3px solid black;
     overflow-y: auto; /* Agrega un scrollbar vertical si es necesario */
     box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
-}
+  }
 
-    .button-container {
-        position: relative;
-        display: inline-block;
+  .info-box.active {
+    display: block;
+  }
+
+  .button-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr !important;
     }
 
-    
+    .info-box {
+      width: 90%;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
 </style>
 
 <Layout>
     <!-- Opciones -->
-  <div class="px-60">
-    <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 gap-12">
+  <div class="px-4 sm:px-10 md:px-20 lg:px-60">
+    <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-8">
+      
       <div class="button-container">
-        <div
-          onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
-          <img
-            src="src/images/editar.svg"
-            alt="Editar Listas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
-          <span class="mt-5 text-lg text-white font-semibold">Editar Tablas</span>
+        <div onclick="toggleInfo(this)" class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
+          <img src="src/images/editar.svg" alt="Editar Listas" class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"/>
+          <span class="mt-3 sm:mt-5 text-base sm:text-lg text-white font-semibold text-center">Editar Tablas</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Editar Tablas</a></strong>
@@ -97,13 +117,8 @@ import Layout from '../layouts/p_layout.astro';
       </div>
 
       <div class="button-container">
-        <div
-          onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
-          <img
-            src="src/images/agregar.svg"
-            alt="Agregar Listas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
+        <div onclick="toggleInfo(this)" class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
+          <img src="src/images/agregar.svg" alt="Agregar Listas" class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"/>
           <span class="mt-5 text-lg flex text-white font-semibold">Agregar Tablas</span>
         </div>
         <div class="info-box">
@@ -148,7 +163,7 @@ import Layout from '../layouts/p_layout.astro';
           <img
             src="src/images/eliminar.svg"
             alt="Eliminar Listas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+            class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"
           />
           <span class="mt-5 text-lg text-white font-semibold"
             >Eliminar Listas</span
@@ -196,7 +211,7 @@ import Layout from '../layouts/p_layout.astro';
           <img
             src="src/images/usuarios.svg"
             alt="Lista de Usuarios"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+            class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"
           />
           <span class="mt-5 text-lg text-white font-semibold"
             >Lista de Usuarios</span
@@ -223,7 +238,7 @@ import Layout from '../layouts/p_layout.astro';
           <img
             src="src/images/listas.svg"
             alt="Lectura de Tablas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+            class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"
           />
           <span class="mt-5 text-lg text-white font-semibold"
             >Lectura Tablas</span
@@ -271,7 +286,7 @@ import Layout from '../layouts/p_layout.astro';
           <img
             src="src/images/herramientas.svg"
             alt="Reporte Herramientas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+            class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"
           />
           <span class="mt-5 text-lg text-white font-semibold"
             >Reporte Herramientas</span
@@ -298,7 +313,7 @@ import Layout from '../layouts/p_layout.astro';
           <img
             src="src/images/activos.svg"
             alt="Reporte Activos"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
+            class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"
           />
           <span class="mt-5 text-lg text-white font-semibold"
             >Reporte Activos</span
@@ -320,7 +335,7 @@ import Layout from '../layouts/p_layout.astro';
           <img
             src="src/images/consumibles.svg"
             alt="Reporte Consumibles"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
+            class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"/>
           <span class="mt-5 text-lg text-white font-semibold"
             >Reporte Consumibles</span>
         </div>

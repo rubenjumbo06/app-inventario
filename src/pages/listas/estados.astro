@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/p_layout.astro";
+import Layout from '../../layouts/p_layout.astro';
 import Sidebar from "../../components/Sidebar.tsx";
 ---
 <!DOCTYPE html>
@@ -9,7 +9,13 @@ import Sidebar from "../../components/Sidebar.tsx";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualización de Tablas</title>
     <style>
-
+        :root {
+        --celeste: #00797E;
+        --verde-oscuro: #0D4B56;
+        --verde-claro: #22694c;
+        --beige: #D8E6B5;
+        --mostaza: yellow;
+        }
         h1 {
             color: white;
             text-align: center;
@@ -32,7 +38,7 @@ import Sidebar from "../../components/Sidebar.tsx";
         }
 
         th {
-            background-color: #27667B;
+            background-color: #139A44;
             color: white;
         }
 
@@ -133,6 +139,5 @@ import Sidebar from "../../components/Sidebar.tsx";
     </div>
 
     <Sidebar client:load />
-
 </Layout>
 </html>

@@ -27,7 +27,7 @@ const SidebarTec: React.FC = () => {
                     <ul style={{ listStyle: 'none', padding: 0 }}>
                         {/* Inicio */}
                         <li>
-                            <a href="../pages/index.astro" className={styles['menu-item']}>
+                            <a href="/TECindex" className={styles['menu-item']}>
                                 Inicio
                             </a>
                         </li>
@@ -43,7 +43,7 @@ const SidebarTec: React.FC = () => {
                             {openSubmenus['listas'] && (
                                 <ul className={styles['submenu']}>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/consumibles" className={styles['submenu-item']}>
                                             Consumibles
                                         </a>
                                     </li>
@@ -62,7 +62,7 @@ const SidebarTec: React.FC = () => {
                             {openSubmenus['agregarProducto'] && (
                                 <ul className={styles['submenu']}>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/consumibles" className={styles['submenu-item']}>
                                             Consumibles
                                         </a>
                                     </li>
@@ -81,7 +81,7 @@ const SidebarTec: React.FC = () => {
                             {openSubmenus['actualizarProducto'] && (
                                 <ul className={styles['submenu']}>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/consumibles" className={styles['submenu-item']}>
                                             Consumibles
                                         </a>
                                     </li>

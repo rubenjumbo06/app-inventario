@@ -25,7 +25,7 @@ const SidebarAd: React.FC = () => {
                     <ul style={{ listStyle: 'none', padding: 0 }}>
                         {/* Inicio */}
                         <li>
-                            <a href="../pages/index.astro" className={styles['menu-item']}>
+                            <a href="/" className={styles['menu-item']}>
                                 Inicio
                             </a>
                         </li>
@@ -41,47 +41,47 @@ const SidebarAd: React.FC = () => {
                             {openSubmenus['listas'] && (
                                 <ul className={styles['submenu']}>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/herramientas" className={styles['submenu-item']}>
                                             Herramientas
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/activos" className={styles['submenu-item']}>
                                             Activos
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/consumibles" className={styles['submenu-item']}>
                                             Consumibles
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/empresa" className={styles['submenu-item']}>
                                             Empresa
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/estados" className={styles['submenu-item']}>
                                             Estados
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/tecnico" className={styles['submenu-item']}>
                                             Técnico
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/users" className={styles['submenu-item']}>
                                             Usuarios
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/utilidad" className={styles['submenu-item']}>
                                             Utilidad
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/salidas" className={styles['submenu-item']}>
                                             Registro de salidas
                                         </a>
                                     </li>
@@ -100,47 +100,47 @@ const SidebarAd: React.FC = () => {
                             {openSubmenus['agregarProducto'] && (
                                 <ul className={styles['submenu']}>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/herramientas" className={styles['submenu-item']}>
                                             Herramientas
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/activos" className={styles['submenu-item']}>
                                             Activos
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/consumibles" className={styles['submenu-item']}>
                                             Consumibles
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/empresa" className={styles['submenu-item']}>
                                             Empresa
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/estados" className={styles['submenu-item']}>
                                             Estados
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/tecnico" className={styles['submenu-item']}>
                                             Técnico
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/users" className={styles['submenu-item']}>
                                             Usuarios
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/utilidad" className={styles['submenu-item']}>
                                             Utilidad
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/salidas" className={styles['submenu-item']}>
                                             Registro de salidas
                                         </a>
                                     </li>
@@ -159,47 +159,47 @@ const SidebarAd: React.FC = () => {
                             {openSubmenus['actualizarProducto'] && (
                                 <ul className={styles['submenu']}>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/herramientas" className={styles['submenu-item']}>
                                             Herramientas
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/activos" className={styles['submenu-item']}>
                                             Activos
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/consumibles" className={styles['submenu-item']}>
                                             Consumibles
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/empresa" className={styles['submenu-item']}>
                                             Empresa
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/estados" className={styles['submenu-item']}>
                                             Estados
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/tecnico" className={styles['submenu-item']}>
                                             Técnico
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/users" className={styles['submenu-item']}>
                                             Usuarios
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/utilidad" className={styles['submenu-item']}>
                                             Utilidad
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas/salidas" className={styles['submenu-item']}>
                                             Registro de salidas
                                         </a>
                                     </li>
@@ -218,7 +218,7 @@ const SidebarAd: React.FC = () => {
                             {openSubmenus['reportes'] && (
                                 <ul className={styles['submenu']}>
                                     <li>
-                                        <a href="#" className={styles['submenu-item']}>
+                                        <a href="../listas" className={styles['submenu-item']}>
                                             Reporte Herramientas
                                         </a>
                                     </li>

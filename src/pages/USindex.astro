@@ -5,10 +5,10 @@ import Layout from '../layouts/p_layout.astro';
 <style>
     /* Definir colores personalizados */
     :root {
-        --celeste: #44A69C;
-        --verde-oscuro: #1C4029;
-        --verde-claro: #53A670;
-        --beige: #BEBF95;
+      --celeste: #7AB351;
+        --verde-oscuro: #3C9B72 ;
+        --verde-claro: #22694c;
+        --beige: #D8E6B5;
         --mostaza: yellow;
     }
 
@@ -68,14 +68,14 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Editar Tablas</a></strong>
           <ul id="actualizarProducto" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
+              <a onclick="setRoleAndRedirect('usuario', 'herramientas')" class="block p-2 hover:bg-gray-200"
                 >•Herramientas</a>
             </li>
             <li>
-              <a href="activos.astro" class="block p-2 hover:bg-gray-200">•Activos</a>
+              <a onclick="setRoleAndRedirect('usuario', 'activos')" class="block p-2 hover:bg-gray-200">•Activos</a>
             </li>
             <li>
-              <a href="consumibles.astro" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+              <a onclick="setRoleAndRedirect('usuario', 'consumibles')" class="block p-2 hover:bg-gray-200">•Consumibles</a>
             </li>
           </ul>
         </div>
@@ -98,14 +98,14 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Agregar Tablas</a></strong>
           <ul id="agregarProducto" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
+              <a onclick="setRoleAndRedirect('usuario', 'herramientas')" class="block p-2 hover:bg-gray-200"
                 >•Herramientas</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Activos</a>
+              <a onclick="setRoleAndRedirect('usuario', 'activos')" class="block p-2 hover:bg-gray-200">•Activos</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+              <a onclick="setRoleAndRedirect('usuario', 'consumibles')" class="block p-2 hover:bg-gray-200">•Consumibles</a>
             </li>
           </ul>
         </div>
@@ -129,14 +129,14 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Lectura Tablas</a></strong>
           <ul id="leerProducto" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
+              <a onclick="setRoleAndRedirect('usuario', 'herramientas')" class="block p-2 hover:bg-gray-200"
                 >•Herramientas</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Activos</a>
+              <a onclick="setRoleAndRedirect('usuario', 'activos')" class="block p-2 hover:bg-gray-200">•Activos</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Consumibles</a>
+              <a onclick="setRoleAndRedirect('usuario', 'consumibles')" class="block p-2 hover:bg-gray-200">•Consumibles</a>
             </li>
           </ul>
         </div>
@@ -160,11 +160,11 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Reporte de Herramientas</a></strong>
           <ul id="reportHerramientas" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
+              <a onclick="setRoleAndRedirect('usuario', 'pdf')" class="block p-2 hover:bg-gray-200"
                 >•PDF</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Excel</a>
+              <a onclick="setRoleAndRedirect('usuario', 'excel')" class="block p-2 hover:bg-gray-200">•Excel</a>
             </li>
           </ul>
         </div>
@@ -187,8 +187,8 @@ import Layout from '../layouts/p_layout.astro';
         <div class="info-box">
           <strong><a class="font-size-2">Reporte Activos</a></strong>
           <ul id="reportActivos" class="submenu pl-5 space-y-1">
-            <li><a href="#" class="block p-2 hover:bg-gray-200">•PDF</a></li>
-            <li><a href="#" class="block p-2 hover:bg-gray-200">•Excel</a></li>
+            <li><a onclick="setRoleAndRedirect('usuario', 'pdf')" class="block p-2 hover:bg-gray-200">•PDF</a></li>
+            <li><a onclick="setRoleAndRedirect('usuario', 'excel')" class="block p-2 hover:bg-gray-200">•Excel</a></li>
           </ul>
         </div>
       </div>
@@ -211,11 +211,11 @@ import Layout from '../layouts/p_layout.astro';
           <strong><a class="font-size-2">Reporte Consumibles</a></strong>
           <ul id="reportConsumibles" class="submenu pl-5 space-y-1">
             <li>
-              <a href="index.html" class="block p-2 hover:bg-gray-200"
+              <a onclick="setRoleAndRedirect('usuario', 'pdf')" class="block p-2 hover:bg-gray-200"
                 >•PDF</a>
             </li>
             <li>
-              <a href="#" class="block p-2 hover:bg-gray-200">•Excel</a>
+              <a onclick="setRoleAndRedirect('usuario', 'excel')" class="block p-2 hover:bg-gray-200">•Excel</a>
             </li>
           </ul>
         </div>
@@ -255,13 +255,10 @@ import Layout from '../layouts/p_layout.astro';
     const pageMap = {
       consumibles: "/listas/consumibles",
       herramientas: "/listas/herramientas",
-      reportes: "/listas/reportes",
-      proveedores: "/listas/proveedores",
-      clientes: "/listas/clientes"
-          // Agrega más páginas aquí según sea necesario
+      activos: "/listas/activos",
       };
 
-      const targetPage = pageMap[pageId] || "TECindex"; // Redirección por defecto si el id no existe
+      const targetPage = pageMap[pageId] || "/USindex"; // Redirección por defecto si el id no existe
       window.location.href = targetPage;
   }
   </script>
