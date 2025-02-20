@@ -119,7 +119,7 @@ const SidebarUser: React.FC = () => {
 
                         {/* Perfil de Usuario */}
                         <li>
-                            <a href="#" className={styles['menu-item']}>
+                            <a href="../perfiluser" className={styles['menu-item']}>
                                 Perfil de Usuario
                             </a>
                         </li>

@@ -198,11 +198,6 @@ const SidebarAd: React.FC = () => {
                                             Utilidad
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="../listas/salidas" className={styles['submenu-item']}>
-                                            Registro de salidas
-                                        </a>
-                                    </li>
                                 </ul>
                             )}
                         </li>
@@ -242,7 +237,7 @@ const SidebarAd: React.FC = () => {
                         </li>
                         {/* Perfil de Usuario */}
                         <li>
-                            <a href="#" className={styles['menu-item']}>
+                            <a href="../perfiladmin" className={styles['menu-item']}>
                                 Perfil de Usuario
                             </a>
                         </li>

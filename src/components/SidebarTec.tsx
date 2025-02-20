@@ -91,7 +91,7 @@ const SidebarTec: React.FC = () => {
 
                         {/* Perfil de Usuario */}
                         <li>
-                            <a href="#" className={styles['menu-item']}>
+                            <a href="../perfiltec" className={styles['menu-item']}>
                                 Perfil de Usuario
                             </a>
                         </li>
