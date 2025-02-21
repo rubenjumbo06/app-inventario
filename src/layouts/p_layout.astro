@@ -1,4 +1,5 @@
 ---
+const { usuario, rol } = Astro.props;
 import "../styles/global.css";
 import "../pages/logout.astro"
 ---
@@ -39,7 +40,7 @@ import "../pages/logout.astro"
     <main class="w-full flex-1 bg-[var(--beige)] p-4 sm:p-8 shadow-md mt-5">
         <div class="flex flex-col sm:flex-row justify-between mb-4">
             <p class="text-white text-sm sm:text-lg text-shadow">
-                <strong>Nombre Usuario:</strong> Admin
+                <strong>User:</strong> {usuario}
             </p>
             <p id="fechaHora" class="text-white text-sm sm:text-lg text-shadow">
                 <strong>Fecha/Hora Ingreso:</strong> Cargando...
