@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Sidebar from "../components/editartabla.tsx";
+const url = new URL(Astro.request.url);
+const tabla = url.searchParams.get("tabla") || "Sin especificar";
 ---
 <style>
     body {
@@ -27,7 +28,7 @@ import Sidebar from "../components/editartabla.tsx";
                   <div class="text-base text-[var(--verde-oscuro)]">Editar Datos</div>
               </strong>
               <div class="mt-2 text-sm text-[var(--verde-oscuro)]">
-                Activos
+                Editando tabla: {tabla}
               </div>
             </div>
           </div>

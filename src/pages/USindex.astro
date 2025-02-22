@@ -53,16 +53,13 @@ import Layout from '../layouts/p_layout.astro';
       <div class="button-container">
         <div
           onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
           <img
             src="src/images/editar.svg"
             alt="Editar Listas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
           <span class="mt-5 text-lg text-white font-semibold"
-            >Editar Tablas</span
-          >
+            >Editar Tablas</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Editar Tablas</a></strong>
@@ -83,16 +80,13 @@ import Layout from '../layouts/p_layout.astro';
       <div class="button-container">
         <div
           onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
           <img
             src="src/images/agregar.svg"
             alt="Agregar Listas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
           <span class="mt-5 text-lg flex text-white font-semibold"
-            >Agregar Tablas</span
-          >
+            >Agregar Tablas</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Agregar Tablas</a></strong>
@@ -112,49 +106,24 @@ import Layout from '../layouts/p_layout.astro';
       </div>
 
       <div class="button-container">
-        <div
-          onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
-          <img
-            src="src/images/listas.svg"
-            alt="Lectura de Tablas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
-          <span class="mt-5 text-lg text-white font-semibold"
-            >Lectura Tablas</span
-          >
-        </div>
-        <div class="info-box">
-          <strong><a class="font-size-2">Lectura Tablas</a></strong>
-          <ul id="leerProducto" class="submenu pl-5 space-y-1">
-            <li>
-              <a onclick="setRoleAndRedirect('usuario', 'herramientas')" class="block p-2 hover:bg-gray-200"
-                >•Herramientas</a>
-            </li>
-            <li>
-              <a onclick="setRoleAndRedirect('usuario', 'activos')" class="block p-2 hover:bg-gray-200">•Activos</a>
-            </li>
-            <li>
-              <a onclick="setRoleAndRedirect('usuario', 'consumibles')" class="block p-2 hover:bg-gray-200">•Consumibles</a>
-            </li>
-          </ul>
-        </div>
+        <a href="/perfiluser" class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
+          <img src="src/images/usuarios.svg" alt="Perfil Usuario"
+            class="w-16 h-16 object-contain invert"/>
+          <span class="mt-5 text-lg text-white font-semibold text-center">Perfil Usuario</span>
+        </a>
       </div>
+      
 
       <div class="button-container">
         <div
           onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
           <img
             src="src/images/herramientas.svg"
             alt="Reporte Herramientas"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
           <span class="mt-5 text-lg text-white font-semibold"
-            >Reporte Herramientas</span
-          >
+            >Reporte Herramientas</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Reporte de Herramientas</a></strong>
@@ -173,16 +142,13 @@ import Layout from '../layouts/p_layout.astro';
       <div class="button-container">
         <div
           onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
           <img
             src="src/images/activos.svg"
             alt="Reporte Activos"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
           <span class="mt-5 text-lg text-white font-semibold"
-            >Reporte Activos</span
-          >
+            >Reporte Activos</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Reporte Activos</a></strong>
@@ -196,16 +162,13 @@ import Layout from '../layouts/p_layout.astro';
       <div class="button-container">
         <div
           onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
+          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
           <img
             src="src/images/consumibles.svg"
             alt="Reporte Consumibles"
-            class="w-16 h-16 max-w-full max-h-full object-contain invert"
-          />
+            class="w-16 h-16 max-w-full max-h-full object-contain invert"/>
           <span class="mt-5 text-lg text-white font-semibold"
-            >Reporte Consumibles</span
-          >
+            >Reporte Consumibles</span>
         </div>
         <div class="info-box">
           <strong><a class="font-size-2">Reporte Consumibles</a></strong>

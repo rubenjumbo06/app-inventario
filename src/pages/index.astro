@@ -204,30 +204,11 @@ import Layout from '../layouts/p_layout.astro';
       </div>
 
       <div class="button-container">
-        <div
-          onclick="toggleInfo(this)"
-          class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black"
-        >
-          <img
-            src="src/images/usuarios.svg"
-            alt="Lista de Usuarios"
-            class="w-12 h-12 sm:w-16 sm:h-16 max-w-full max-h-full object-contain invert"
-          />
-          <span class="mt-5 text-lg text-white font-semibold"
-            >Lista de Usuarios</span
-          >
-        </div>
-        <div class="info-box">
-          <strong><a class="font-size-2">Listar Usuarios</a></strong>
-          <ul id="listasProductos" class="submenu pl-5 space-y-1">
-            <li>
-              <a onclick="setRoleAndRedirect('admin', 'users')" class="block p-2 hover:bg-gray-200">•Usuario</a>
-            </li>
-            <li>
-              <a onclick="setRoleAndRedirect('admin', 'tecnico')" class="block p-2 hover:bg-gray-200">•Técnico</a>
-            </li>
-          </ul>
-        </div>
+        <a href="/perfiladmin" class="flex flex-col items-center justify-center p-10 bg-[var(--celeste)] rounded-lg shadow-lg cursor-pointer hover:bg-[var(--verde-oscuro)] border-4 border-black">
+          <img src="src/images/usuarios.svg" alt="Perfil Usuario"
+            class="w-16 h-16 object-contain invert"/>
+          <span class="mt-5 text-lg text-white font-semibold text-center">Perfil Usuario</span>
+        </a>
       </div>
 
       <div class="button-container">

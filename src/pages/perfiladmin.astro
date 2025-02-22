@@ -18,7 +18,7 @@ import Layout from "../layouts/Layout.astro"
             </div>
             <div class="md:w-2/3 md:pl-8">
                 <h2 class="text-xl font-semibold text-[#22694c] dark:text-[#22694c] mb-4">Permisos de Usuario</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-6">
+                <p class="text-gray-700 dark:text-gray-300 mb-6 text-justify">
                     Como Administrador del sistema de gestión de inventarios, tienes acceso a todas las funciones clave del sistema, 
                     lo que te permite gestionar eficientemente los productos, usuarios y operaciones. Entre estos se destaca el poder agregar, 
                     editar y eliminar productos del inventario, así como acceso a todas las tablas y reportes generales de la base de datos.
@@ -61,7 +61,13 @@ import Layout from "../layouts/Layout.astro"
         </div>
     </div>
 
-    
+    <!-- Botón flotante para regresar a la pantalla principal -->
+    <a href="/" class="fixed bottom-6 right-6 bg-[#22694c] text-white p-3 rounded-full shadow-lg hover:bg-[#7ab351] transition duration-300">
+        <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+        
+    </a>
 </Layout>
 
 <style>
